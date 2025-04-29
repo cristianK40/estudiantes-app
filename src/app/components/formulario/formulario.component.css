@@ -1,0 +1,82 @@
+/* Fondo general */
+:host {
+    display: block;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 2rem auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
+  }
+  
+  /* Estilo de etiquetas */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Inputs */
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus {
+    border-color: orange;
+    outline: none;
+  }
+  
+  /* Materias */
+  [formArrayName="materias"] {
+    margin-bottom: 1.5rem;
+  }
+  
+  [formArrayName="materias"] div {
+    margin-bottom: 0.5rem;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: orange;
+  }
+  
+  /* Créditos */
+  p {
+    font-size: 1rem;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Botón */
+  button[type="submit"] {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #e69500;
+    transform: scale(1.03);
+  }
+  
+  button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+  

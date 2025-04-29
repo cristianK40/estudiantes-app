@@ -1,0 +1,14 @@
+<app-header></app-header>
+<p class="text">Estudiantes:</p>
+<ul class="estudiante-list">
+    @for(estudiante of estudiantes; track $index)
+    {
+        <a class="link" [routerLink]="estudiante.id">
+            <li class="estudiante-item">
+                <h3>{{estudiante.id}}</h3>
+                <h2>{{estudiante.nombre}}</h2>
+                <h3>{{estudiante.correo}}</h3>
+            </li>
+         </a>  
+    }
+</ul> 

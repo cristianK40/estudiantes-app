@@ -1,0 +1,23 @@
+<form [formGroup]="estudianteForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" formControlName="nombre" type="text" />
+  </div>
+
+  <div>
+    <label for="correo">Correo:</label>
+    <input id="correo" formControlName="correo" type="email" />
+  </div>
+
+  <div formArrayName="materias">
+    <label>Materias disponibles:</label>
+    <div *ngFor="let materia of materiasDisponibles; let i = index">
+      <input type="checkbox" [formControl]="materiasFormArray.at(i)" (change)="calcularCreditos()" />
+      {{ materia.nombre }}
+    </div>
+  </div>
+
+  <p>Total de Créditos: <strong>{{ totalCreditos }}</strong></p>
+
+  <button type="submit" [disabled]="!estudianteForm.valid">Guardar Estudiante</button>
+</form>

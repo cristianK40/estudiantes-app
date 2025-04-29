@@ -1,0 +1,28 @@
+.estudiante-list {
+    margin: 30px;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.estudiante-item {
+    padding-left: 20px;
+    background-color: whitesmoke;
+    border-bottom: 20px solid white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: black;
+}
+
+.estudiante-item:hover {
+    background-color: orange;
+}
+
+.text{
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

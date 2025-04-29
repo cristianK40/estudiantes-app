@@ -1,0 +1,41 @@
+<app-header></app-header>
+<form [formGroup]="estudianteForm" (ngSubmit)="actualizarEstudiante()">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" formControlName="nombre" type="text" />
+  </div>
+
+  <div>
+    <label for="correo">Correo:</label>
+    <input id="correo" formControlName="correo" type="email" />
+  </div>
+
+  <div formArrayName="materias">
+    <label>Materias disponibles:</label>
+    <div *ngFor="let materia of materiasDisponibles; let i = index">
+      <input type="checkbox" [formControl]="getFormControlAt(i)" (change)="calcularCreditos()" />
+      {{ materia.nombre }}
+    </div>
+  </div>
+
+  <p>Total de Créditos: <strong>{{ totalCreditos }}</strong></p>
+
+  <hr />
+
+  <div>
+    <h3>Materias del estudiante:</h3>
+    <ul>
+      <li *ngFor="let materia of materiasAux">
+        <strong>{{ materia.nombreMateria }}</strong> - Profesor: {{ materia.profesor }} <br />
+        Integrantes: {{ materia.integrantes.join(', ') }}
+      </li>
+    </ul>
+  </div>
+
+  <br />
+
+  <button type="submit" [disabled]="!estudianteForm.valid">Actualizar Estudiante</button>
+  <button type="button" (click)="eliminarEstudiante()" style="margin-left: 1rem; background-color: crimson; color: white;">
+    Eliminar Estudiante
+  </button>
+</form>
